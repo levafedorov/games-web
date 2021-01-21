@@ -1,0 +1,6 @@
+
+.page-pattern{
+    @include centerer;
+    padding-top: $padding-big;
+    padding-bottom: $padding-big;
+}

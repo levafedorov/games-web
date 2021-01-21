@@ -1,0 +1,15 @@
+.header{
+   &__slider-track{
+       display: flex;
+   }
+   &__item-box{
+      display: inline-block;
+   }
+   &__item{
+    min-height: 87rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+   }
+}

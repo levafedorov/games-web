@@ -1,0 +1,48 @@
+body {
+    @include nunito;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+
+
+
+
+.typo-primary{
+  font-size: 2.8rem;
+  &--white{
+    color: $color-white;
+  }
+  &--grey{
+    color: $color-grey-ligth;
+  }
+  &--bold{
+    font-weight:bold;
+  }
+}
+
+
+.typo-secondary{
+  font-size: $font-size-default;
+  &--grey{
+    color: $color-grey;
+  }
+  &--white{
+    color: $color-white;
+  }
+}
+
+
+.typo-tertiary{
+  font-size: 1.4rem;
+  &--grey{
+    color: $color-grey;
+  }
+  &--purple{
+    color: $color-purple-dark;
+  }
+  &--bold{
+    font-weight:bold;
+  }
+}
