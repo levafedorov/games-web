@@ -1,0 +1,10 @@
+.slider-arrows{
+    display: flex;
+    align-items: center;
+    @include respond(phone){
+        margin-top: 2rem;
+    }
+    & > *:not(:first-child){
+        margin-left:1.5rem;
+    }
+}

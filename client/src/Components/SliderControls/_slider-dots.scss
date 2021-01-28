@@ -1,0 +1,25 @@
+.slider-dots{
+    &__dot{
+     position: relative;
+     width: 1.5rem;
+     height: 1.5rem;
+     border-radius: 50%;
+     z-index: 0;
+     border: none;
+     outline:none;
+     background-color: $color-grey;
+     background-clip:padding-box;
+     backface-visibility: hidden;
+     border: 2px solid transparent;
+     transition: all .3s;
+     &:not(:first-child){
+         margin-left: 1.8rem;
+     }
+     &--active{
+        border-color: $color-white;
+        background-color: transparent;
+      }
+    }
+
+    
+}

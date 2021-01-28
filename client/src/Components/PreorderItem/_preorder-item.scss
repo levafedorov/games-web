@@ -1,0 +1,60 @@
+.preorder-games-item{
+   width: 100%;
+   height:51rem;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   position: relative;
+   cursor: pointer;
+   @include respond(phone){
+    height:45rem;
+   }
+   &__cover{
+       position: absolute;
+       top:0;
+       left:0;
+       height:100%;
+       width:100%;
+       background-image: linear-gradient(rgba($color-black, .6), rgba($color-black, .6));
+   }
+    &__main{
+       position: absolute;
+       top:50%;
+       left:50%;
+       transform: translate(-50%, -50%);
+       width: 40rem;
+       padding: $padding-small;
+    }
+    &__image{
+       height:12rem;
+       background-repeat: no-repeat;
+       background-position: center;
+       background-size: contain;
+    }
+    &__date{
+        text-align: center;
+     }
+
+    &__add{
+        position: absolute;
+        bottom:1rem;
+        left:50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    &__extra{
+        display: inline-block;
+        text-transform: capitalize;
+        .genres, .date-developer{
+        }
+    }
+
+    &__platforms{
+        display: inline-block;
+        margin-left: 1rem;
+        & > *:not(:first-child){
+            margin-left: 5px;
+        } 
+    }
+}

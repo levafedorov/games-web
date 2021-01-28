@@ -7,3 +7,26 @@
     max-width: 170rem;
     margin:0 auto;
 }
+
+@mixin centerer2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin centerer-padding{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@mixin respond($device){
+     @if $device == tab-land {
+         @media (max-width: 75em){  @content  } //1200
+     }
+     @if $device == tab-port {
+        @media (max-width: 56.25em){ @content } //900px
+     }
+    @if $device == phone {
+        @media (max-width: 37.5em){  @content } //600px
+    }
+}

@@ -1,0 +1,99 @@
+.top-bar{
+    width: 100%;
+    position: absolute;
+    padding-top: $padding-big;
+    padding-bottom: $padding-big;
+    z-index: 200;
+.icon{
+    width: 2.3rem;
+    height: 2.3rem;
+}  
+
+&__profile, &__search{
+    display: inline-block;
+    margin-left:2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    vertical-align: middle;
+}
+
+&__profile{
+    background-image: url("../../assets/icons/icon-profile.png");
+}
+
+&__amount-messages{
+    width:2rem;
+    height: 2rem;
+    background-color: $color-black;
+    color:$color-white;
+    position: absolute;
+    border-radius: 50%;
+    top:-5px;
+    right:-5px;
+    .amount{
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        @include centerer2();
+        font-size: 1.2rem;
+    }
+}
+
+&__search{
+    background-image: url("../../assets/icons/icon-search.png");
+    position:relative;
+    cursor: pointer;
+}
+
+
+
+&__search-field{
+    font-size: 1.6rem;
+    color: $color-white;
+    position: absolute;
+    top:3rem;
+    right:1rem;
+    background-color: rgba($color-grey, .5);
+    border: none;
+    border-right: 2px solid $color-black;
+    border-bottom: 2px solid $color-black;
+    width:0;
+    height:0;
+    visibility: hidden;
+    transition: height .2s ease,
+                width .2s ease .2s;
+    outline: none;
+
+   &::placeholder {
+       color: $color-white;
+    }
+}
+#checkbox-top{
+    display: none;
+}
+
+
+#checkbox-top:checked + &__search-field{
+    visibility:visible;
+    width: 20rem;
+    height: 3.5rem;
+}
+
+}
+
+
+
+
+
+.top-bar-layout{
+    @include centerer();
+    @include centerer-padding();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

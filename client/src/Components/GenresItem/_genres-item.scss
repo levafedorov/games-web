@@ -1,0 +1,103 @@
+.genres-item{
+    height:76rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    @include respond(phone){
+        grid-template-columns: none;
+        grid-template-rows: none;
+        height:45rem;
+       }
+    &__genre{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        transition-property: all;  
+        transition-duration: .8s;
+        filter: opacity(0);
+        &-cover{
+            background-image: linear-gradient(rgba($color-black, .4), rgba($color-black, .4));
+            position: absolute;
+            width:100%;
+            height:100%;
+        }
+        &-link{
+            position: absolute;
+            text-transform: capitalize;
+            right: 3rem;
+            bottom: 3rem;
+            .arrow-right{
+                display: inline-block;
+                height: 2rem;
+                width: 2rem;
+                border: 1px solid $color-grey;
+                vertical-align: middle;
+                margin-left: 2rem;
+                background-image: url("../../assets/icons/icon-rectangle-white.png");
+                background-size: 40%;
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: all .3s ease;
+            }
+        &:hover .arrow-right{
+            transform: translateX(-2rem);
+         }
+        }
+        &--first{
+            &:first-child{
+             grid-row: 1 / 1;
+             grid-column: 1/6;
+             background-color: white;
+            }
+            &:nth-child(2){
+             grid-row: 1 / 1;
+             grid-column: 6/-1;
+             background-color: red;   
+            }
+            &:nth-child(3){
+             grid-row: 2 / 2;
+             grid-column: 1/4;
+             background-color: blue;   
+            }
+            &:nth-child(4){
+             grid-row: 2 / 2;
+             grid-column: 4/-1;
+             background-color: green;   
+            }
+         }
+        &--third{
+            &:first-child{
+                grid-row: 1 / -1;
+                grid-column: 1/ -1;
+                background-color:blueviolet;
+            }
+        } 
+    }
+    .genres-item   &__genre{
+        @include respond(phone){
+            grid-row: auto;
+            grid-column: auto;
+        }
+    }
+
+    &--active  .genres-item__genre{
+        &:first-of-type{
+            transition-delay:.2s;
+          }
+          &:nth-of-type(2){
+            transition-delay:.3s;
+          }
+          &:nth-of-type(3){
+            transition-delay:.4s;
+          }
+          &:nth-of-type(4){
+            transition-delay: .5s;
+          }
+          backface-visibility: hidden;
+          filter: opacity(1);
+    }
+}

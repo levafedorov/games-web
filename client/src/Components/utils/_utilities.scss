@@ -1,18 +1,50 @@
 //Margins 
 
 .u-margin-bottom-big{
-    margin-bottom: 9rem;
+    margin-bottom: 9rem !important;
 }
 
 .u-margin-bottom-small{
-    margin-bottom: 2.7rem;
+    margin-bottom: 2.7rem !important;
+    @include respond(phone){
+        margin-bottom: 1.4rem !important;
+    }
 }
 
 
 .u-margin-bottom-medium{
-    margin-bottom: 5.4rem;
+    margin-bottom: 5.4rem !important;
+    @include respond(phone){
+        margin-bottom: 3.4rem !important;
+    }
 }
 
 .u-capitalize{
     text-transform: capitalize;
+}
+
+.u-screen-bottom-darken{
+    background-image: linear-gradient(to top, 
+    rgba($color-purple-darkest, 1) 10%, 
+    rgba($color-purple-darkest, .8) 50%, 
+    rgba($color-grey, .3));
+}
+
+.u-screen-bottom-grey{
+    background-image: linear-gradient(to top,  
+    rgba($color-grey-dark, .98) 50%, 
+    transparent 100%
+    );
+}
+
+.u-screen-brighten{
+    background-color: linear-gradient(to top, 
+    rgba($color-white, .99) 10%, 
+    rgba($color-white, .8) 50%, 
+    rgba($color-grey, .3));
+    filter:brightness(2);
+}
+
+.u-centerer{
+    text-align: center;
 }

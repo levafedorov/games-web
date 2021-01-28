@@ -1,0 +1,42 @@
+.preorder-slider{
+    position: relative;
+    &::before, &::after{
+      content: "";
+      position: absolute;
+      top:0;
+      width: 20rem;
+      height: 100%;
+      z-index: 50;
+    }
+    &:before{
+      left:0;
+      background-image: linear-gradient(to right, $color-purple-darkest, transparent);
+    }
+    &:after{
+      right:0;
+      background-image: linear-gradient(to left, $color-purple-darkest, transparent);
+    }
+    &__slider-track{
+        display: flex;
+        transition: transform .3s;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+     &__item-box{
+       backface-visibility: hidden;
+       transition: all .3s;
+       border-radius: 1rem;
+       overflow: hidden;
+       filter: saturate(.1);
+       &:not(:first-child){
+         margin-left: 1.2%;
+       }
+       &--active{
+         transform: scale(1.1);
+         filter: none;
+         position: relative;
+         z-index: 5;
+       }
+     }
+    
+}

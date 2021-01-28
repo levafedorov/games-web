@@ -1,11 +1,9 @@
 body {
     @include nunito;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.6rem;
     line-height: 1.7;
   }
-
-
 
 
 
@@ -15,7 +13,7 @@ body {
     color: $color-white;
   }
   &--grey{
-    color: $color-grey-ligth;
+    color: $color-grey-light;
   }
   &--bold{
     font-weight:bold;
@@ -26,7 +24,7 @@ body {
 .typo-secondary{
   font-size: $font-size-default;
   &--grey{
-    color: $color-grey;
+    color: $color-grey-light;
   }
   &--white{
     color: $color-white;
@@ -43,6 +41,9 @@ body {
     color: $color-purple-dark;
   }
   &--bold{
-    font-weight:bold;
+    font-weight:800;
+  }
+  &--white{
+    color: $color-white;
   }
 }

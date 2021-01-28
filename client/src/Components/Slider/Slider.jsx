@@ -6,7 +6,7 @@ import {React, Component} from "react";
 export class Slider extends Component{
    
   state = {
-     width: 0,
+    boxesWidth: 0,
   }
    
 
@@ -24,15 +24,17 @@ export class Slider extends Component{
   resizeHandler = (ev) => {
     let width;
     width = this.sliderRef.offsetWidth;
-    this.setState({width});
+    //elems width in %;
+    const {elemsWidthCalculator, perPage, learnPerPage} = this.props;
+    const boxesWidth =  elemsWidthCalculator(width, perPage);
+    learnPerPage(Math.floor(100/boxesWidth));
+    this.setState({boxesWidth});
  }
 
 
     render(){  
-        const {Track, elemsWidthCalculator, items, perPage, activeBox} = this.props;
-        const {width} = this.state;
-        //elems width in %;
-        const boxesWidth =  elemsWidthCalculator(width, perPage);
+        const {Track, items, activeBox} = this.props;
+        const {boxesWidth} = this.state;
         
         return(
           <div className="slider" ref={ref => this.sliderRef = ref}>
@@ -46,5 +48,6 @@ export class Slider extends Component{
 Slider.defaultProps = {
   elemsWidthCalculator: (...args) => 100, 
   items:[],
-  perPage:0
+  perPage:0,
+  learnPerPage: () => {}
 }

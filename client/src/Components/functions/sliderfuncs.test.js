@@ -1,4 +1,4 @@
-import {elemsWidthCalculator} from "./slider-functions";
+import {elemsWidthCalculator, elemsCicle} from "./slider-functions";
 import {formForGallery} from "./transform";
 
 describe("Test of functions", () => {
@@ -16,7 +16,23 @@ describe("Test of functions", () => {
             expect(elemsWidthCalculator(140, undefined)).toBeNull;
             expect(elemsWidthCalculator(Infinity, undefined)).toBeNull;
           });
-      });   
+      }); 
+      describe("Test for elemsCicle", () => {
+          test("Positive", () => {
+             expect(elemsCicle([1, 2, 3, 4], 3, "+")).toEqual([2, 3, 4, 1]);
+             expect(elemsCicle([1], 0, "+")).toEqual([1]);
+             expect(elemsCicle([1, 2, 3, 4, 'string'], 4, "+")).toEqual([2, 3, 4,'string', 1]);
+             expect(elemsCicle([1, 2, 3, 4], 0, "-")).toEqual([4, 1, 2, 3]);
+             expect(elemsCicle([1, 2, 3, NaN], 0, "-")).toEqual([NaN, 1, 2, 3]);
+             expect(elemsCicle([1], 0, "-")).toEqual([1]);
+             expect(elemsCicle([], 0, "-")).toEqual([]);
+          });
+          test("Negative", () => {
+            expect(elemsCicle([1, 2, 3, 4], 3, 5)).toBeUndefined;
+            expect(elemsCicle([1, 2, 3, 4], 3, "")).toBeUndefined;
+            expect(elemsCicle([1, 2, 3, 4],  NaN, "")).toBeUndefined;
+        });
+      });  
    });
    describe("Tests for transform", () => {
        describe("formForGallery", () => {

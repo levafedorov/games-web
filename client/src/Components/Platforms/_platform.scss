@@ -1,0 +1,11 @@
+.platform{
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: capitalize;
+    @include respond(phone){
+        display:block;
+      }
+   .icon{
+       margin-right: 1rem;
+   }
+}

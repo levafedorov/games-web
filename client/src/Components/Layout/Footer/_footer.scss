@@ -1,0 +1,46 @@
+.footer{
+    background-color: $color-purple-darkest;
+    background-image: url('../../../assets/elems/elems-line-1.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    &-top, &-bottom{padding-top: $padding-big;
+                    padding-bottom: $padding-big;
+                   @include respond(phone){
+                    padding-top: $padding-small;
+                    padding-bottom: $padding-small;
+                   }
+                }
+    &-bottom{
+        border-top: 1px solid $color-purple-dark;
+        position: relative;
+        &__copyright{
+            position: absolute;
+            @include centerer2();
+            color:$color-purple-dark;
+        }
+    }    
+}
+
+.footer-layout{
+    @include centerer();
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-left:1rem;
+    padding-right:1rem;
+    @include respond(tab-port){
+        flex-direction: column;
+      }
+
+    &__left{
+       flex-basis: 20%; 
+       flex-shrink: 0;
+    }
+    &__right{
+        flex-basis: 70%;
+    }
+}
+
+

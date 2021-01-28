@@ -1,0 +1,9 @@
+.genres-slider{
+    @include centerer();
+    @include centerer-padding();
+    &__slider-track{
+        display: flex;
+        transition: transform .3s;
+    }
+    
+}

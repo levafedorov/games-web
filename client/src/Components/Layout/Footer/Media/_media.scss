@@ -1,0 +1,13 @@
+.media{
+    text-align: center;
+    &__link{
+        display: inline;
+        filter: contrast(0%);
+        &:not(:first-child){
+            margin-left: 2rem;
+        }
+    }
+   .logo{
+       margin-bottom: 2rem;
+   }
+}

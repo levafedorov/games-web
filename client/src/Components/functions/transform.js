@@ -4,4 +4,19 @@
    return string.trim().replace(/\s+/g, '-');
 }
 
-console.log(formForGallery("this is it"));
+
+
+ export const devideArray = (arr, amount) => {
+    if(!Array.isArray(arr) || 
+    typeof amount !== "number"){
+      console.log("Wrong type");
+      return;
+    } 
+    let arrCopy = [...arr];
+    let newArr = [];
+  while(arrCopy.length){
+    newArr.push(arrCopy.splice(0, amount));
+  }
+  return newArr;
+}
+

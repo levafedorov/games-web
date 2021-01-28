@@ -1,0 +1,23 @@
+[class$="-section"]{
+   padding-top: $padding-big;
+   padding-bottom: $padding-big;
+   background-color: $color-purple-darkest;
+   @include respond(phone){
+      padding-top: $padding-small;
+      padding-bottom: $padding-small; 
+   }
+}
+
+.new-section{ 
+   background-image: url('../../assets/elems/elems-line-1.png');
+   background-repeat: no-repeat;
+   background-position: center top;
+   background-size: contain;
+}
+
+.genres-section{
+   padding-bottom: 15rem;
+   @include respond(phone){
+      padding-bottom:  $padding-small;
+   }
+}

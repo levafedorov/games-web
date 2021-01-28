@@ -1,15 +1,117 @@
 .header{
+   position: relative;
+   transition: all .5s;
+   overflow: hidden;
    &__slider-track{
        display: flex;
    }
    &__item-box{
       display: inline-block;
+      opacity: 0;
+      transition: all .8s;
+      overflow: hidden;
+      &--active{
+         opacity: 1;
+      }
    }
    &__item{
     min-height: 87rem;
+    @include respond(phone){
+      min-height: 64rem;
+      }
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:center;
+    background-position:top center;
+   }
+
+
+   .slider{
+      z-index: -1;
+   }
+
+   .page-pattern{ 
+      position: absolute;
+      left:0; 
+      top: 0;}
+    
+   .slider-dots{
+      position: absolute;
+      bottom: 7rem;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+
+   &__title-box{
+      width: 43.4rem;
+      position: absolute;
+      top: 50%;
+      right: 20rem;
+      transform: translateY(-50%);
+      visibility: hidden;
+      @include respond(phone){
+         width: 30.4rem;
+         }
+      @include respond(tab-port){
+      right: 50%;
+      transform: translateY(-50%) translateX(50%);
+      }
+   }
+   &__title-image{
+      height: 23.8rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transition: all .5s cubic-bezier(.51,.92,.24,1.15);
+      @include respond(phone){
+         height: 18.8rem;
+      }
+   }
+
+   //ANIMATION
+
+   &__item{
+      transition: transform 20s ease;
+      transform-origin: top;
+   }
+
+   &__item-box--active{
+      .header__item{
+          transform: scale(1.1);  
+      }
+   }
+
+   &__title-box{
+      z-index: -1;
+      &--active{
+        visibility: visible;
+        z-index: 5;
+      }
+   }
+   
+   &__title-image{
+      transition-property: transform, opacity;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(.51,.92,.24,1.15);
+   }
+
+   .btn{
+      transition-property: transform, opacity;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(.51,.92,.24,1.15);
+      transition-delay: .3s;
+   }
+
+   .btn, &__title-image{
+      backface-visibility: hidden;
+      transform: translateX(20rem);
+      opacity: 0;
+   }
+   
+   &__title-box--active{
+      .btn, .header__title-image{
+         transform: translateX(0);
+         opacity: 1;
+      }
    }
 }

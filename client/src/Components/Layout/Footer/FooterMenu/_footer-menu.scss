@@ -1,0 +1,36 @@
+.footer-menu{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include respond(phone){
+        justify-content: center;
+    }
+    &__item{
+        padding:1rem;
+    }
+    &__link{
+        color: $color-purple-dark;
+    }
+    &__title{
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        .decoration{
+            position: absolute;
+            height: .2rem;
+            width: 2rem;
+            display: inline-block;
+            left:0;
+            bottom:0;
+            transition: all .3s ease;
+            opacity: 0;
+            transform: translateX(10rem);
+        }
+        &:hover .decoration{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    
+}
